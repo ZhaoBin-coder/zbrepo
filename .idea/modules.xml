@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CMCC2/CMCC2.iml" filepath="$PROJECT_DIR$/CMCC2/CMCC2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cmcc/Cmcc.iml" filepath="$PROJECT_DIR$/Cmcc/Cmcc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Dmp/Dmp.iml" filepath="$PROJECT_DIR$/Dmp/Dmp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HbaseApi/HbaseApi.iml" filepath="$PROJECT_DIR$/HbaseApi/HbaseApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Http/Http.iml" filepath="$PROJECT_DIR$/Http/Http.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JdSpider/JdSpider.iml" filepath="$PROJECT_DIR$/JdSpider/JdSpider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JdongGoods/JdongGoods.iml" filepath="$PROJECT_DIR$/JdongGoods/JdongGoods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kafka/Kafka.iml" filepath="$PROJECT_DIR$/Kafka/Kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/University/University.iml" filepath="$PROJECT_DIR$/University/University.iml" />
+    </modules>
+  </component>
+</project>
