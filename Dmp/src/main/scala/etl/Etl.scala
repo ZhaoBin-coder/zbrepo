@@ -3,18 +3,24 @@ package etl
 import beans.Logs
 import config.ConfigHelper
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import utils.TurnType
 
 object Etl {
   def main(args: Array[String]): Unit = {
-    //读取本地文件
+   if(args.length<2){
+    println("参数错误")
+    System.exit(1)
+   }
+
+
    val session=SparkSession.builder()
      .appName(this.getClass.getSimpleName)
      .master("local[*]")
      .config("spark.serializer",ConfigHelper.SparkSerializer)
      .getOrCreate()
-    val source = session.sparkContext.textFile(args(0))
+   //读取hdfs上的数据
+   val source=session.sparkContext.textFile(args(0))
     //过滤 去重 统一
     val filtered: RDD[Array[String]] = source.map(line=>line.split(",",line.length)).filter(_.length>=85)
     //创建样例类
@@ -103,10 +109,12 @@ object Etl {
     arr(81),
     arr(82),
     arr(83),
-    TurnType.toInt(arr(84))
- ))
-    //转换成pauquet存放到hdfs
-
-
+    TurnType.toInt(arr(84))))
+//数据清洗完成之后准换成parquet文件存储
+   import session.implicits._
+   //写出
+val frame: DataFrame =Rddlogs.toDF()
+   frame.write.parquet("hdfs://10.10.0.12:8020/flume/test")
+session.stop()
   }
 }

@@ -9,4 +9,10 @@ object ConfigHelper {
   //加载序列化
  val SparkSerializer: String = load.getString("spark.serializer")
 
+  //加载JDBC相关
+  val driver: String = load.getString("db.default.driver")
+  val url: String = load.getString("db.default.url")
+  val user: String = load.getString("db.default.user")
+  val password: String = load.getString("db.default.password")
+
 }
